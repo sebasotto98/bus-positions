@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">DS_Android</string>
+    <string name="title_activity_maps">Map</string>
+
+    <string-array name="topics">
+        <item>"021,1"</item>
+        <item>"022,1"</item>
+        <item>"022,2"</item>
+        <item>"024,1"</item>
+        <item>"025,1"</item>
+        <item>"025,2"</item>
+        <item>"026,1"</item>
+        <item>"026,2"</item>
+        <item>"027,1"</item>
+        <item>"027,2"</item>
+        <item>"032,1"</item>
+        <item>"032,2"</item>
+        <item>"035,1"</item>
+        <item>"035,2"</item>
+        <item>"036,1"</item>
+        <item>"040,1"</item>
+        <item>"040,2"</item>
+        <item>"046,1"</item>
+        <item>"046,2"</item>
+        <item>"049,1"</item>
+        <item>"049,2"</item>
+        <item>"051,1"</item>
+        <item>"054,1"</item>
+        <item>"054,2"</item>
+        <item>"057,1"</item>
+        <item>"060,1"</item>
+        <item>"1,1"</item>
+        <item>"1,2"</item>
+        <item>"10,1"</item>
+        <item>"10,2"</item>
+    </string-array>
+</resources>
