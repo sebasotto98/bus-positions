@@ -1,4 +1,4 @@
-package ds.android.ds_project.Classes;
+package gr.bus_positions.Classes;
 
 import java.io.Serializable;
 

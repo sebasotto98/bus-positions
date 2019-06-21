@@ -6,7 +6,7 @@
  * @since   14/04/2019
  */
 
-package ds.android.ds_project.Interfaces;
+package gr.bus_positions.Interfaces;
 
 import java.util.List;
 

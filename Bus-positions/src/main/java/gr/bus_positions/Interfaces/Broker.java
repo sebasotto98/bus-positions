@@ -6,10 +6,10 @@
  * @since   14/04/2019
  */
 
-package ds.android.ds_project.Interfaces;
+package gr.bus_positions.Interfaces;
 
-import ds.android.ds_project.Classes.Topic;
-import ds.android.ds_project.Classes.Value;
+import gr.bus_positions.Classes.Topic;
+import gr.bus_positions.Classes.Value;
 
 import java.net.InetAddress;
 import java.util.List;

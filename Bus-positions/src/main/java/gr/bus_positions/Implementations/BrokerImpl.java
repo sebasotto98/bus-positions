@@ -1,11 +1,11 @@
-package ds.android.ds_project.Implementations;
+package gr.bus_positions.Implementations;
 
-import ds.android.ds_project.Classes.Topic;
-import ds.android.ds_project.Classes.Value;
-import ds.android.ds_project.Interfaces.Broker;
-import ds.android.ds_project.Interfaces.Node;
-import ds.android.ds_project.Interfaces.Publisher;
-import ds.android.ds_project.Interfaces.Subscriber;
+import gr.bus_positions.Classes.Topic;
+import gr.bus_positions.Classes.Value;
+import gr.bus_positions.Interfaces.Broker;
+import gr.bus_positions.Interfaces.Node;
+import gr.bus_positions.Interfaces.Publisher;
+import gr.bus_positions.Interfaces.Subscriber;
 
 import java.io.*;
 import java.math.BigInteger;
@@ -14,8 +14,8 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.*;
 
-import static ds.android.ds_project.Channel.CHANNEL_IP;
-import static ds.android.ds_project.Channel.CHANNEL_PORT;
+import static gr.bus_positions.Channel.CHANNEL_IP;
+import static gr.bus_positions.Channel.CHANNEL_PORT;
 
 public class BrokerImpl implements Broker, Node, Runnable, Serializable, Cloneable {
 

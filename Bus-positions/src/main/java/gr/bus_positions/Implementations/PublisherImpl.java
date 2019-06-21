@@ -1,11 +1,11 @@
-package ds.android.ds_project.Implementations;
+package gr.bus_positions.Implementations;
 
-import ds.android.ds_project.Classes.Bus;
-import ds.android.ds_project.Classes.Topic;
-import ds.android.ds_project.Classes.Value;
-import ds.android.ds_project.Interfaces.Broker;
-import ds.android.ds_project.Interfaces.Node;
-import ds.android.ds_project.Interfaces.Publisher;
+import gr.bus_positions.Classes.Bus;
+import gr.bus_positions.Classes.Topic;
+import gr.bus_positions.Classes.Value;
+import gr.bus_positions.Interfaces.Broker;
+import gr.bus_positions.Interfaces.Node;
+import gr.bus_positions.Interfaces.Publisher;
 
 import java.io.*;
 import java.net.InetAddress;
@@ -15,9 +15,9 @@ import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static ds.android.ds_project.Channel.CHANNEL_IP;
-import static ds.android.ds_project.Channel.CHANNEL_PORT;
-import static ds.android.ds_project.Implementations.BrokerImpl.SLEEP_TIME;
+import static gr.bus_positions.Channel.CHANNEL_IP;
+import static gr.bus_positions.Channel.CHANNEL_PORT;
+import static gr.bus_positions.Implementations.BrokerImpl.SLEEP_TIME;
 
 public class PublisherImpl implements Publisher, Node, Runnable, Serializable, Cloneable {
 

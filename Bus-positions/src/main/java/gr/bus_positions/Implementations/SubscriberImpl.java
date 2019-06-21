@@ -1,11 +1,11 @@
-package ds.android.ds_project.Implementations;
+package gr.bus_positions.Implementations;
 
 import java.io.Serializable;
 import java.net.InetAddress;
 
-import ds.android.ds_project.Classes.Topic;
-import ds.android.ds_project.Interfaces.Broker;
-import ds.android.ds_project.Interfaces.Subscriber;
+import gr.bus_positions.Classes.Topic;
+import gr.bus_positions.Interfaces.Broker;
+import gr.bus_positions.Interfaces.Subscriber;
 
 public class SubscriberImpl implements Subscriber, Serializable {
 

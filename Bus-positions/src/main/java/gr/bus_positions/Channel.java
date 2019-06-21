@@ -1,8 +1,8 @@
-package ds.android.ds_project;
+package gr.bus_positions;
 
-import ds.android.ds_project.Interfaces.Broker;
-import ds.android.ds_project.Interfaces.Publisher;
-import ds.android.ds_project.Interfaces.Subscriber;
+import gr.bus_positions.Interfaces.Broker;
+import gr.bus_positions.Interfaces.Publisher;
+import gr.bus_positions.Interfaces.Subscriber;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
