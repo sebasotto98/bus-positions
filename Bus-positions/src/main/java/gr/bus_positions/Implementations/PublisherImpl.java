@@ -1,12 +1,10 @@
 package gr.bus_positions.Implementations;
-
 import gr.bus_positions.Classes.Bus;
 import gr.bus_positions.Classes.Topic;
 import gr.bus_positions.Classes.Value;
 import gr.bus_positions.Interfaces.Broker;
 import gr.bus_positions.Interfaces.Node;
 import gr.bus_positions.Interfaces.Publisher;
-
 import java.io.*;
 import java.net.InetAddress;
 import java.net.ServerSocket;
@@ -14,17 +12,13 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
-
 import static gr.bus_positions.Channel.CHANNEL_IP;
 import static gr.bus_positions.Channel.CHANNEL_PORT;
 import static gr.bus_positions.Implementations.BrokerImpl.SLEEP_TIME;
-
 public class PublisherImpl implements Publisher, Node, Runnable, Serializable, Cloneable {
-
     public static final long serialVersionUID = -6209161616299602640L;
     private static final String PUBLISHER_IP = "192.168.1.4";
     private int PORT = 8765;
-
     private int pubCount;
     private int pubID;
     private InetAddress IP;
@@ -38,7 +32,6 @@ public class PublisherImpl implements Publisher, Node, Runnable, Serializable, C
     private List<ArrayList<String>> busLineData = new ArrayList<>();
     private List<List<String>> busPositionsData = new ArrayList<>();
     private List<List<String>> routeCodesData = new ArrayList<>();
-
 
     @Override
     public InetAddress getIP() {
@@ -77,16 +70,11 @@ public class PublisherImpl implements Publisher, Node, Runnable, Serializable, C
         }
     }
 
-//    public void notifyFailure(Broker bro) {
-//
-//    }
-
     public void readData(String path) {
         int counter = 0;
         File f = null;
         BufferedReader br = null;
         String line;
-
         try {
             f = new File(path);
         } catch (NullPointerException e) {
@@ -98,7 +86,6 @@ public class PublisherImpl implements Publisher, Node, Runnable, Serializable, C
         } catch (FileNotFoundException e) {
             System.err.println("Error opening file!");
         }
-
         try {
             while ((line = br.readLine()) != null) {
                 if (path.contains("busLines")) {
@@ -124,7 +111,6 @@ public class PublisherImpl implements Publisher, Node, Runnable, Serializable, C
         } catch (IOException e) {
             System.err.println("Error reading line " + counter + 1 + ".");
         }
-
         try {
             br.close();
         } catch (IOException e) {
@@ -140,7 +126,7 @@ public class PublisherImpl implements Publisher, Node, Runnable, Serializable, C
             out.writeUnshared(this);
             out.flush();
             out.reset();
-            pubCount = (int)in.readUnshared();
+            pubCount = (int) in.readUnshared();
             getBrokerList();
         } catch (UnknownHostException e) {
             System.err.println("Could not connect to channel.");
@@ -216,7 +202,7 @@ public class PublisherImpl implements Publisher, Node, Runnable, Serializable, C
 
     /**
      * When the thread starts, it sends an object of itself to the broker.
-     *
+     * <p>
      * Then it calculates the last iteration of the 2nd loop as follows:
      * -It splits the the number of bus lines by the number of Publishers we have.
      * (e.g. If we have 20 bus lines and 3 publishers, the output of 20/3 is 6)
@@ -227,7 +213,7 @@ public class PublisherImpl implements Publisher, Node, Runnable, Serializable, C
      * and also if the above division was not absolute, then the last iteration will be the number of
      * total bus lines we have.
      * (So the 3rd Publisher instead of having a last iteration of 18 will have 20)
-     *
+     * <p>
      * After this is done, a loop begins from the start of the bus positions data to the end.
      * It saves the line's number, the route's code and the vehicle's ID.
      * The 2nd loop starts beginning from the above equation BUT instead of multiplying by the ID
@@ -235,19 +221,19 @@ public class PublisherImpl implements Publisher, Node, Runnable, Serializable, C
      * This means that the 1st Publisher will always start from 0, the 2nd one will start from where
      * the 1st one finished (because ID - 1 will be 2 - 1 so the output is the same as the last iteration
      * of the 1st Publisher) and the 2rd one will start from where the 2nd one finished.
-     *
+     * <p>
      * Inside the 2nd loop it checks if the position's line number matches the ID of this Publisher's specific
      * iterations. If it does, then it stores the line's ID and the line's name. Otherwise, this Publisher is
      * not responsible for this line number and it moves to the next bus position.
-     *
+     * <p>
      * The 3rd loop iterates through the data of the route's code until the route code matches the position's one
      * and it stores the route's type and the route's info.
-     *
+     * <p>
      * Lastly it creates a Bus object with all of the stored information,
      * a Value object with the bus, the latitude, the longitude and the timestamp of this position
      * and a Topic with the bus line's ID.
      * It then pushes the objects to the connected broker.
-     *
+     * <p>
      * The sleep is used to emulate that a Publisher is a sensor, otherwise it would end in seconds.
      */
     public void run() {
@@ -314,7 +300,6 @@ public class PublisherImpl implements Publisher, Node, Runnable, Serializable, C
      * a new publisher connects to the channel.
      */
     public class Updater implements Runnable {
-
         ServerSocket channelProviderSocket;
 
         Updater() {
@@ -332,7 +317,7 @@ public class PublisherImpl implements Publisher, Node, Runnable, Serializable, C
             try {
                 connection = channelProviderSocket.accept();
                 in = new ObjectInputStream(connection.getInputStream());
-                pubCount = (int)in.readUnshared();
+                pubCount = (int) in.readUnshared();
             } catch (IOException e) {
                 System.err.println("Could not connect with channel.");
             } catch (ClassNotFoundException e) {
@@ -341,7 +326,6 @@ public class PublisherImpl implements Publisher, Node, Runnable, Serializable, C
             Thread updaterTr = new Thread(this);
             updaterTr.start();
         }
-
     }
 
     /**

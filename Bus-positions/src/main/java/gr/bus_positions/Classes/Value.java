@@ -1,7 +1,5 @@
 package gr.bus_positions.Classes;
-
 import java.io.Serializable;
-
 /**
  * The Value class is used to store the bus which is of type Bus, the latitude,
  * the longitude and the timestamp.
@@ -9,10 +7,8 @@ import java.io.Serializable;
  * @author  Albernaz de Sotto Mayor Sebastiao Cristo, Konstantakos Michail
  * @since   14/04/2019
  */
-
 public class Value implements Serializable {
-
-    public static final long serialVersionUID= 6621410190597288110L;
+    public static final long serialVersionUID = 6621410190597288110L;
     private Bus bus;
     private double latitude;
     private double longitude;
@@ -37,6 +33,7 @@ public class Value implements Serializable {
         return longitude;
     }
 
-    public String getTimestamp() { return timestamp; }
-
+    public String getTimestamp() {
+        return timestamp;
+    }
 }

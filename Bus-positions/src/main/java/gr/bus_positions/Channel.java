@@ -1,9 +1,7 @@
 package gr.bus_positions;
-
 import gr.bus_positions.Interfaces.Broker;
 import gr.bus_positions.Interfaces.Publisher;
 import gr.bus_positions.Interfaces.Subscriber;
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -11,7 +9,6 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
-
 /**
  * This program is a server application that receives data from a Publisher and
  * sends requested values from that data to the Subscriber
@@ -19,15 +16,11 @@ import java.util.List;
  * @author  Albernaz de Sotto Mayor Sebastiao Cristo, Konstantakos Michail
  * @since   14/04/2019
  */
-
 public class Channel implements Runnable, Cloneable {
-
     public static final String CHANNEL_IP = "192.168.1.4";
     public static final int CHANNEL_PORT = 7654;
-
     private static int pubCount = 0;
     private static ServerSocket server;
-
     private static volatile List<Broker> brokers = new ArrayList<>();
     private static List<Publisher> publishers = new ArrayList<>();
     private static List<Subscriber> subscribers = new ArrayList<>();
@@ -42,13 +35,13 @@ public class Channel implements Runnable, Cloneable {
 
     /**
      * The channel waits for a connection and receives the object of a node.
-     *
+     * <p>
      * If the object is a Broker, the channel updates the broker list, sends it to the connected
      * broker and then it sends the list to every other broker connected on the channel.
-     *
+     * <p>
      * If the object is a Publisher, the channel updates the publisher list, sends the broker list
      * to the connected publsher and informs every other publisher that a new publisher connected.
-     *
+     * <p>
      * If the object is a Subscriber, the channel updates the subscriber list and the broker list and sends
      * the updated broker list to every connected subscriber.
      */
@@ -83,7 +76,7 @@ public class Channel implements Runnable, Cloneable {
             System.err.println("Unknown object received.");
         }
         if (object instanceof Broker) {
-            brokers.add((Broker)object);
+            brokers.add((Broker) object);
             try {
                 out.writeUnshared(brokers);
             } catch (IOException e) {
@@ -104,7 +97,7 @@ public class Channel implements Runnable, Cloneable {
             int brokerID = -1;
             while (true) {
                 try {
-                    brokerID = (int)in.readUnshared();
+                    brokerID = (int) in.readUnshared();
                 } catch (IOException e) {
                     System.err.println("Broker disconnected.");
                     brokers.remove(brokerID - 1);
@@ -115,7 +108,7 @@ public class Channel implements Runnable, Cloneable {
                             out = new ObjectOutputStream(requestSocket.getOutputStream());
                             out.writeUnshared(2);
                             out.writeUnshared(brokers);
-                            out.writeUnshared(i+1);
+                            out.writeUnshared(i + 1);
                         } catch (IOException er) {
                             System.err.println("Error while trying to initiate connection with broker node.");
                         }
@@ -161,7 +154,7 @@ public class Channel implements Runnable, Cloneable {
                 }
             }
         } else if (object instanceof Publisher) {
-            publishers.add((Publisher)object);
+            publishers.add((Publisher) object);
             try {
                 out.writeUnshared(++pubCount);
                 out.writeUnshared(brokers);
@@ -210,5 +203,4 @@ public class Channel implements Runnable, Cloneable {
         Thread thread = new Thread(channel);
         thread.start();
     }
-
 }

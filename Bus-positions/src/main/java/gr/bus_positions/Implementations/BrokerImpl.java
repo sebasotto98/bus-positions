@@ -1,33 +1,26 @@
 package gr.bus_positions.Implementations;
-
 import gr.bus_positions.Classes.Topic;
 import gr.bus_positions.Classes.Value;
 import gr.bus_positions.Interfaces.Broker;
 import gr.bus_positions.Interfaces.Node;
 import gr.bus_positions.Interfaces.Publisher;
 import gr.bus_positions.Interfaces.Subscriber;
-
 import java.io.*;
 import java.math.BigInteger;
 import java.net.*;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.*;
-
 import static gr.bus_positions.Channel.CHANNEL_IP;
 import static gr.bus_positions.Channel.CHANNEL_PORT;
-
 public class BrokerImpl implements Broker, Node, Runnable, Serializable, Cloneable {
-
     public static final long serialVersionUID = -5083142442417609669L;
     public static final int SLEEP_TIME = 200;
     private static final String BROKER_IP = "192.168.1.4";
     private int PORT = 6543;
     private int PUB_PORT = 4321;
     private int SUB_PORT = 5432;
-
     private transient volatile List<Broker> brokers = new ArrayList<>();
-
     private List<Subscriber> registeredSubscribers = new ArrayList<>();
     private List<Publisher> registeredPublishers = new ArrayList<>();
     private List<Topic> topicList;
@@ -44,35 +37,27 @@ public class BrokerImpl implements Broker, Node, Runnable, Serializable, Cloneab
     private long pubConTrId;
     private long subConTrId;
     private Topic topic;
-
     public List<Broker> getBrokers() {
         return brokers;
     }
-
     public void setBrokers(List<Broker> brokers) {
         this.brokers = brokers;
     }
-
     public List<Topic> getTopicList() {
         return topicList;
     }
-
     public InetAddress getIP() {
         return IP;
     }
-
     public int getPubPort() {
         return PUB_PORT;
     }
-
     public int getSubPort() {
         return SUB_PORT;
     }
-
     public int getChannelPort() {
         return PORT;
     }
-
     public void init(int c) {
         topicList = new ArrayList<>(dataHashtable.keySet());
         connect();
@@ -112,7 +97,6 @@ public class BrokerImpl implements Broker, Node, Runnable, Serializable, Cloneab
             }
         }
     }
-
     public void connect() {
         try {
             pubProviderSocket = new ServerSocket(PUB_PORT);
@@ -121,7 +105,6 @@ public class BrokerImpl implements Broker, Node, Runnable, Serializable, Cloneab
             System.err.println("Error when attempting to open sockets.");
         }
     }
-
     public void disconnect() {
         try {
             pubProviderSocket.close();
@@ -130,7 +113,6 @@ public class BrokerImpl implements Broker, Node, Runnable, Serializable, Cloneab
             System.err.println("Error when attempting to close sockets.");
         }
     }
-
     public void updateNodes() {
         long currentTrID = Thread.currentThread().getId();
         if (currentTrID == pubConTrId) {
@@ -151,7 +133,6 @@ public class BrokerImpl implements Broker, Node, Runnable, Serializable, Cloneab
             }
         }
     }
-
     public void CalculateKeys() {
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-1");
@@ -174,7 +155,6 @@ public class BrokerImpl implements Broker, Node, Runnable, Serializable, Cloneab
             throw new RuntimeException(e);
         }
     }
-
     public Broker hashTopic(Topic top, Value val) {
         CalculateKeys();
         if (strToInt(busLineIDHash) % brokers.size() == brokerID - 1) {
@@ -189,7 +169,6 @@ public class BrokerImpl implements Broker, Node, Runnable, Serializable, Cloneab
         }
         return this;
     }
-
     private static int strToInt(String str) {
         int i = 0;
         int num = 0;
@@ -200,7 +179,6 @@ public class BrokerImpl implements Broker, Node, Runnable, Serializable, Cloneab
         if (num < 0) num = -num;
         return num;
     }
-
     public void pull(Topic top) {
         for (Topic topic : dataHashtable.keySet()) {
             if (topic.equals(top)) {
@@ -229,7 +207,6 @@ public class BrokerImpl implements Broker, Node, Runnable, Serializable, Cloneab
             System.out.println("Subscriber disconnected.");
         }
     }
-
     public Publisher acceptConnection(Publisher pub) {
         try {
             while (true) {
@@ -247,7 +224,6 @@ public class BrokerImpl implements Broker, Node, Runnable, Serializable, Cloneab
             return pub;
         }
     }
-
     public Subscriber acceptConnection(Subscriber sub) {
         Topic topic;
         try {
@@ -263,25 +239,24 @@ public class BrokerImpl implements Broker, Node, Runnable, Serializable, Cloneab
         }
         return sub;
     }
-
     /**
      * When the method starts it checks which thread called it.
-     *
+     * <p>
      * If it is a Publisher connection thread then it opens a socket for the connection and if it is
      * the first Broker to connect to a Publisher then it sends the brokers list.
-     *
+     * <p>
      * Afterwards it clones the current thread so that a new connection may be established between the
      * Broker and another Publisher.
-     *
+     * <p>
      * Finally, the Publisher acceptConnection method is called in order to receive the data from the
      * connected Publisher.
-     *
+     * <p>
      * If it is a Subcriber connection thread then it opens a socket for the connection and if it is
      * the first Broker to connect to a Subscriber then it sends the brokers list.
-     *
+     * <p>
      * Afterwards it clones the current thread so that a new connection may be established between the
      * Broker and another Subscriber.
-     *
+     * <p>
      * Finally, the Subscriber acceptConnection method is called in order to send the requested topic's
      * value to the connected Subscriber.
      */
@@ -335,7 +310,6 @@ public class BrokerImpl implements Broker, Node, Runnable, Serializable, Cloneab
             }
         }
     }
-
     /**
      * This class is used in a Thread to update the broker list everytime a new broker
      * connects to the channel and to send its topic list everytime a subscriber requests
@@ -362,7 +336,7 @@ public class BrokerImpl implements Broker, Node, Runnable, Serializable, Cloneab
                 connection = channelProviderSocket.accept();
                 in = new ObjectInputStream(connection.getInputStream());
                 out = new ObjectOutputStream(connection.getOutputStream());
-                int cmd = (int)in.readUnshared();
+                int cmd = (int) in.readUnshared();
                 if (cmd == 0) {
                     brokers = (List<Broker>) in.readUnshared();
                 } else if (cmd == 1) {
@@ -382,11 +356,9 @@ public class BrokerImpl implements Broker, Node, Runnable, Serializable, Cloneab
         }
 
     }
-
     private Broker thisBroker() {
         return this;
     }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -394,7 +366,6 @@ public class BrokerImpl implements Broker, Node, Runnable, Serializable, Cloneab
         BrokerImpl broker = (BrokerImpl) o;
         return brokerID == broker.brokerID;
     }
-
     /**
      * This is the main method that asks the user how many brokers he wants
      * and uses a loop to create that number of brokers, initializing them with
@@ -407,5 +378,4 @@ public class BrokerImpl implements Broker, Node, Runnable, Serializable, Cloneab
         broker = new BrokerImpl();
         broker.init(0);
     }
-
 }

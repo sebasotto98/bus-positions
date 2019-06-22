@@ -1,7 +1,5 @@
 package gr.bus_positions.Classes;
-
 import java.io.Serializable;
-
 /**
  * The Bus class is used to store the line number, the route code, the vehicle ID, the line name,
  * the line ID, the line's info and the route type.
@@ -9,10 +7,8 @@ import java.io.Serializable;
  * @author  Albernaz de Sotto Mayor Sebastiao Cristo, Konstantakos Michail
  * @since   14/04/2019
  */
-
 public class Bus implements Serializable {
-
-    public static final long serialVersionUID= 972796977197385609L;
+    public static final long serialVersionUID = 972796977197385609L;
     private String lineNumber;
     private String routeCode;
     private String vehicleID;
@@ -31,7 +27,9 @@ public class Bus implements Serializable {
         this.routeType = routeType;
     }
 
-    public String getLineNumber() { return lineNumber; }
+    public String getLineNumber() {
+        return lineNumber;
+    }
 
     public String getRouteCode() {
         return routeCode;
@@ -53,5 +51,7 @@ public class Bus implements Serializable {
         return info;
     }
 
-    public String getRouteType() { return routeType; }
+    public String getRouteType() {
+        return routeType;
+    }
 }

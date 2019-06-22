@@ -1,5 +1,4 @@
 package gr.bus_positions_android;
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -10,23 +9,18 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
-
 import gr.bus_positions.Classes.Topic;
 import gr.bus_positions.Classes.Value;
 import gr.bus_positions.Interfaces.Broker;
 import gr.bus_positions.Interfaces.Node;
 import gr.bus_positions.Interfaces.Subscriber;
-
 import static gr.bus_positions.Channel.CHANNEL_IP;
 import static gr.bus_positions.Channel.CHANNEL_PORT;
 import static gr.bus_positions.Implementations.BrokerImpl.SLEEP_TIME;
-
 public class SubscriberImpl implements Subscriber, Node, Serializable {
-
     public static final long serialVersionUID = -931651160190181219L;
     private static final String SUBSCRIBER_IP = "10.0.2.15";
     private int PORT = 9876;
-
     private transient Socket requestSocket = null;
     private transient ObjectOutputStream out = null;
     private transient ObjectInputStream in = null;
@@ -114,11 +108,11 @@ public class SubscriberImpl implements Subscriber, Node, Serializable {
     }
 
     public void updateNodes() {
-            brokerKeys = new ArrayList<>();
-            for (int i = 0; i < brokers.size(); i++) {
-                ArrayList<Topic> newArrayList = new ArrayList<>(brokers.get(i).getTopicList());
-                brokerKeys.add(newArrayList);
-            }
+        brokerKeys = new ArrayList<>();
+        for (int i = 0; i < brokers.size(); i++) {
+            ArrayList<Topic> newArrayList = new ArrayList<>(brokers.get(i).getTopicList());
+            brokerKeys.add(newArrayList);
+        }
     }
 
     public List<Broker> getBrokers() {
@@ -134,12 +128,12 @@ public class SubscriberImpl implements Subscriber, Node, Serializable {
      * which belongs to the broker with ID 1 and connect with it,
      * calls the updateNode() to get the brokers list and
      * disconnect from broker with ID 1.
-     *
+     * <p>
      * Then it asks in a loop the user to give the bus line he is interested in.
      * If the number is 0, the program exits.
      * Otherwise, it searches in the brokers list for the broker that is responsible for
      * this topic and registers it.
-     *
+     * <p>
      * Lastly it receives the value of the topic, disconnects from the broker
      * and visualizes it if it is valid.
      */
@@ -212,5 +206,4 @@ public class SubscriberImpl implements Subscriber, Node, Serializable {
             }
         } while (true);
     }
-
 }

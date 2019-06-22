@@ -1,12 +1,9 @@
 package gr.bus_positions_android;
-
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
-
 import androidx.fragment.app.FragmentActivity;
-
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -15,18 +12,14 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
 import java.util.Objects;
-
 import gr.bus_positions.Classes.Value;
 import gr.bus_positions.Interfaces.Subscriber;
 import gr.DS_Android.R;
-
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
-
     private GoogleMap mMap;
     private String request;
     private Subscriber subscriber;
@@ -39,7 +32,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         assert mapFragment != null;
         mapFragment.getMapAsync(this);
-        request=Objects.requireNonNull(getIntent().getExtras()).getString("topic");
+        request = Objects.requireNonNull(getIntent().getExtras()).getString("topic");
         readValues = new ReadValues();
         subscriber = new SubscriberImpl(readValues);
     }
@@ -70,7 +63,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             flag3 = true;
             vehicleIDs = new ArrayList<>();
             markers = new Hashtable<>();
-            BitmapDrawable bitmapdraw=(BitmapDrawable)getResources().getDrawable(R.drawable.bus);
+            BitmapDrawable bitmapdraw = (BitmapDrawable) getResources().getDrawable(R.drawable.bus);
             Bitmap b = bitmapdraw.getBitmap();
             Bitmap smallMarker = Bitmap.createScaledBitmap(b, 100, 100, false);
             markerOptions.icon(BitmapDescriptorFactory.fromBitmap(smallMarker));
@@ -123,7 +116,5 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             busPosition = new LatLng(value.getLatitude(), value.getLongitude());
             publishProgress(null);
         }
-
     }
-
 }
