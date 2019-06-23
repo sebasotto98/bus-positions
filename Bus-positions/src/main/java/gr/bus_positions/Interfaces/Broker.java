@@ -3,13 +3,6 @@ import gr.bus_positions.Classes.Topic;
 import gr.bus_positions.Classes.Value;
 import java.net.InetAddress;
 import java.util.List;
-/**
- * This program is a server application that receives data from a Publisher and
- * sends requested values from that data to the Subscriber
- *
- * @author  Albernaz de Sotto Mayor Sebastiao Cristo, Konstantakos Michail
- * @since   14/04/2019
- */
 public interface Broker {
     /**
      * This method returns the topic set of a Broker.

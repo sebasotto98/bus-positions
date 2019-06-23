@@ -9,13 +9,6 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
-/**
- * This program is a server application that receives data from a Publisher and
- * sends requested values from that data to the Subscriber
- *
- * @author  Albernaz de Sotto Mayor Sebastiao Cristo, Konstantakos Michail
- * @since   14/04/2019
- */
 public class Channel implements Runnable, Cloneable {
     public static final String CHANNEL_IP = "192.168.1.4";
     public static final int CHANNEL_PORT = 7654;

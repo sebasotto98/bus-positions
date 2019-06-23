@@ -2,13 +2,6 @@ package gr.bus_positions.Interfaces;
 import gr.bus_positions.Classes.Topic;
 import gr.bus_positions.Classes.Value;
 import java.net.InetAddress;
-/**
- * This program is a client application that reads a dataset with
- * bus information and sends it using push to Broker.
- *
- * @author  Albernaz de Sotto Mayor Sebastiao Cristo, Konstantakos Michail
- * @since   14/04/2019
- */
 public interface Publisher {
     /**
      * This method returns the IP of the Publisher.

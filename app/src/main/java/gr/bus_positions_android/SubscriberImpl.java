@@ -17,6 +17,14 @@ import gr.bus_positions.Interfaces.Subscriber;
 import static gr.bus_positions.Channel.CHANNEL_IP;
 import static gr.bus_positions.Channel.CHANNEL_PORT;
 import static gr.bus_positions.Implementations.BrokerImpl.SLEEP_TIME;
+/**
+ * This class is a client application that asks the user which bus line he is
+ * interested in and then communicates with the brokers to find the topic and
+ * return its value to the user.
+ *
+ * @author  Albernaz de Sotto Mayor Sebastiao Cristo, Konstantakos Michail
+ * @since   14/04/2019
+ */
 public class SubscriberImpl implements Subscriber, Node, Serializable {
     public static final long serialVersionUID = -931651160190181219L;
     private static final String SUBSCRIBER_IP = "10.0.2.15";

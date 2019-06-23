@@ -1,14 +1,6 @@
 package gr.bus_positions.Interfaces;
 import gr.bus_positions.Classes.Topic;
 import java.net.InetAddress;
-/**
- * This program is a client application that asks the user which bus line he is
- * interested in and then communicates with the brokers to find the topic and
- * return its value to the user.
- *
- * @author  Albernaz de Sotto Mayor Sebastiao Cristo, Konstantakos Michail
- * @since   14/04/2019
- */
 public interface Subscriber {
     /**
      * This method returns the IP of the Publisher.

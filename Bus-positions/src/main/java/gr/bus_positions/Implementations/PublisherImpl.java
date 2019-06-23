@@ -15,6 +15,13 @@ import java.util.List;
 import static gr.bus_positions.Channel.CHANNEL_IP;
 import static gr.bus_positions.Channel.CHANNEL_PORT;
 import static gr.bus_positions.Implementations.BrokerImpl.SLEEP_TIME;
+/**
+ * This class is a client application that reads a dataset with bus data
+ * and sends it to a Broker.
+ *
+ * @author  Albernaz de Sotto Mayor Sebastiao Cristo, Konstantakos Michail
+ * @since   14/04/2019
+ */
 public class PublisherImpl implements Publisher, Node, Runnable, Serializable, Cloneable {
     public static final long serialVersionUID = -6209161616299602640L;
     private static final String PUBLISHER_IP = "192.168.1.4";

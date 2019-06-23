@@ -1,8 +1,8 @@
 package gr.bus_positions.Classes;
 import java.io.Serializable;
 /**
- * The Value class is used to store the bus which is of type Bus, the latitude,
- * the longitude and the timestamp.
+ * This class is used to store the bus, the latitude, the longitude
+ * and the timestamp.
  *
  * @author  Albernaz de Sotto Mayor Sebastiao Cristo, Konstantakos Michail
  * @since   14/04/2019

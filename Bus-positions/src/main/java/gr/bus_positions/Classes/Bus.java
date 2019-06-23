@@ -1,8 +1,8 @@
 package gr.bus_positions.Classes;
 import java.io.Serializable;
 /**
- * The Bus class is used to store the line number, the route code, the vehicle ID, the line name,
- * the line ID, the line's info and the route type.
+ * This class is used to store the line number, the route code, the vehicle ID,
+ * the line name, the line ID, the line's info and the route type.
  *
  * @author  Albernaz de Sotto Mayor Sebastiao Cristo, Konstantakos Michail
  * @since   14/04/2019

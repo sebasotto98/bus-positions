@@ -1,12 +1,5 @@
 package gr.bus_positions.Interfaces;
 import java.util.List;
-/**
- * The Node interface is implemented from Publisher, Broker and Subscriber since
- * all of them are nodes and need methods to handle their connections
- *
- * @author  Albernaz de Sotto Mayor Sebastiao Cristo, Konstantakos Michail
- * @since   14/04/2019
- */
 public interface Node {
     /**
      * This method initializes a node.

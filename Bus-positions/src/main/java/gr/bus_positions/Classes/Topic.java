@@ -1,7 +1,7 @@
 package gr.bus_positions.Classes;
 import java.io.Serializable;
 /**
- * The Topic class is used to store the line's ID
+ * This class is used to store the line's ID.
  *
  * @author  Albernaz de Sotto Mayor Sebastiao Cristo, Konstantakos Michail
  * @since   14/04/2019

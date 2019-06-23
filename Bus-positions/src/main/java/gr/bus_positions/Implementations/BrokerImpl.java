@@ -13,6 +13,13 @@ import java.security.NoSuchAlgorithmException;
 import java.util.*;
 import static gr.bus_positions.Channel.CHANNEL_IP;
 import static gr.bus_positions.Channel.CHANNEL_PORT;
+/**
+ * This class is a server application that receives data from a Publisher and
+ * sends requested values from that data to a Subscriber.
+ *
+ * @author  Albernaz de Sotto Mayor Sebastiao Cristo, Konstantakos Michail
+ * @since   14/04/2019
+ */
 public class BrokerImpl implements Broker, Node, Runnable, Serializable, Cloneable {
     public static final long serialVersionUID = -5083142442417609669L;
     public static final int SLEEP_TIME = 200;
