@@ -1,7 +1,7 @@
 package gr.bus_positions.Implementations;
 import java.io.Serializable;
 import java.net.InetAddress;
-import gr.bus_positions.Classes.Topic;
+import gr.bus_positions.Topic;
 import gr.bus_positions.Interfaces.Broker;
 import gr.bus_positions.Interfaces.Subscriber;
 /**

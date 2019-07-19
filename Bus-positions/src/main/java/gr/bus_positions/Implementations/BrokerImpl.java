@@ -1,6 +1,6 @@
 package gr.bus_positions.Implementations;
-import gr.bus_positions.Classes.Topic;
-import gr.bus_positions.Classes.Value;
+import gr.bus_positions.Topic;
+import gr.bus_positions.Value;
 import gr.bus_positions.Interfaces.Broker;
 import gr.bus_positions.Interfaces.Node;
 import gr.bus_positions.Interfaces.Publisher;

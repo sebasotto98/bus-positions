@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
 import java.util.Objects;
-import gr.bus_positions.Classes.Value;
+import gr.bus_positions.Value;
 import gr.bus_positions.Interfaces.Subscriber;
 import gr.DS_Android.R;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {

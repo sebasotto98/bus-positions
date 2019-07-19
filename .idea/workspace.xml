@@ -51,18 +51,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="98bc8d11-8bb3-437b-9482-b4bc9ce776b7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Channel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Channel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Classes/Bus.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Classes/Bus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Classes/Topic.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Classes/Topic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Classes/Value.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Classes/Value.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Classes/Bus.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Bus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Classes/Topic.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Topic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Classes/Value.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Value.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Implementations/BrokerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Implementations/BrokerImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Implementations/PublisherImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Implementations/PublisherImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Implementations/SubscriberImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Implementations/SubscriberImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Interfaces/Broker.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Interfaces/Broker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Interfaces/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Interfaces/Node.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Interfaces/Publisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Interfaces/Publisher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Interfaces/Subscriber.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Interfaces/Subscriber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/bus_positions_android/MapsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/bus_positions_android/MapsActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/gr/bus_positions_android/SubscriberImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gr/bus_positions_android/SubscriberImpl.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
@@ -89,7 +87,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/gr/bus_positions_android/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state>
@@ -103,7 +101,7 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/gr/bus_positions_android/SubscriberImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state>
@@ -172,7 +170,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/gr/bus_positions_android/MainActivity.java" />
         <option value="$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Interfaces/Publisher.java" />
         <option value="$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Interfaces/Subscriber.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/gr/bus_positions_android/SubscriberImpl.java" />
         <option value="$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Implementations/SubscriberImpl.java" />
         <option value="$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Interfaces/Broker.java" />
         <option value="$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Interfaces/Node.java" />
@@ -182,10 +179,11 @@
         <option value="$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Classes/Bus.java" />
         <option value="$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Classes/Value.java" />
         <option value="$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Implementations/BrokerImpl.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/gr/bus_positions_android/SubscriberImpl.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="142" />
     <option name="y" value="36" />
     <option name="width" value="1400" />
@@ -241,13 +239,6 @@
               <item name="Bus-positions-Bus-positions" type="e9137016:NonAndroidModuleNode" />
               <item name="java" type="f7eae187:NonAndroidSourceTypeNode" />
               <item name="bus_positions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Bus-positions" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Bus-positions-Bus-positions" type="e9137016:NonAndroidModuleNode" />
-              <item name="java" type="f7eae187:NonAndroidSourceTypeNode" />
-              <item name="bus_positions" type="462c0819:PsiDirectoryNode" />
-              <item name="Classes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Bus-positions" type="1abcf292:AndroidViewProjectNode" />
@@ -499,11 +490,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49919224" visible="true" weight="0.1732224" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49919224" visible="true" weight="0.20196672" />
       <window_info id="Structure" order="2" sideWeight="0.50080776" side_tool="true" weight="0.32995737" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -528,6 +519,33 @@
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49919224" visible="true" weight="0.12708019" />
+      <window_info id="Structure" order="2" sideWeight="0.50080776" side_tool="true" weight="0.32995737" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Build Variants" order="4" side_tool="true" />
+      <window_info id="Image Layers" order="5" />
+      <window_info id="Designer" order="6" />
+      <window_info id="Resources Explorer" order="7" />
+      <window_info id="Capture Tool" order="8" />
+      <window_info anchor="bottom" id="Run" order="0" sideWeight="0.4977307" weight="0.32872504" />
+      <window_info anchor="bottom" id="Logcat" order="1" sideWeight="0.49946696" weight="0.32936078" />
+      <window_info anchor="bottom" id="TODO" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.32936078" />
+      <window_info anchor="bottom" id="Terminal" order="4" />
+      <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.50226927" side_tool="true" weight="0.32872504" />
+      <window_info anchor="bottom" id="Version Control" order="6" />
+      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49924356" weight="0.32872504" />
+      <window_info anchor="bottom" id="Android Profiler" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Statistic" order="9" />
+      <window_info anchor="bottom" id="Sequence" order="10" />
+      <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="right" id="Gradle" order="2" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+    </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
@@ -617,16 +635,6 @@
     <entry file="file://$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Interfaces/Node.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/gr/bus_positions_android/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/gr/bus_positions_android/MapsActivity.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Implementations/BrokerImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -637,6 +645,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Bus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Implementations/PublisherImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -644,56 +659,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Classes/Bus.java">
+    <entry file="file://$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Value.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-          <folding>
-            <element signature="e#1061#1062#0" expanded="true" />
-            <element signature="e#1094#1095#0" expanded="true" />
-            <element signature="e#1130#1131#0" expanded="true" />
-            <element signature="e#1162#1163#0" expanded="true" />
-            <element signature="e#1198#1199#0" expanded="true" />
-            <element signature="e#1230#1231#0" expanded="true" />
-            <element signature="e#1265#1266#0" expanded="true" />
-            <element signature="e#1296#1297#0" expanded="true" />
-            <element signature="e#1332#1333#0" expanded="true" />
-            <element signature="e#1364#1365#0" expanded="true" />
-            <element signature="e#1395#1396#0" expanded="true" />
-            <element signature="e#1422#1423#0" expanded="true" />
-            <element signature="e#1458#1459#0" expanded="true" />
-            <element signature="e#1490#1491#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="153">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Classes/Topic.java">
+    <entry file="file://$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Topic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-          <folding>
-            <element signature="e#395#396#0" expanded="true" />
-            <element signature="e#429#430#0" expanded="true" />
-            <element signature="e#461#462#0" expanded="true" />
-            <element signature="e#489#490#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Bus-positions/src/main/java/gr/bus_positions/Classes/Value.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-          <folding>
-            <element signature="e#756#757#0" expanded="true" />
-            <element signature="e#782#783#0" expanded="true" />
-            <element signature="e#817#818#0" expanded="true" />
-            <element signature="e#848#849#0" expanded="true" />
-            <element signature="e#884#885#0" expanded="true" />
-            <element signature="e#916#917#0" expanded="true" />
-            <element signature="e#952#953#0" expanded="true" />
-            <element signature="e#984#985#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="136">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -707,6 +683,16 @@
             <element signature="e#1835#1836#0" expanded="true" />
             <element signature="e#1862#1863#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/gr/bus_positions_android/MapsActivity.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/gr/bus_positions_android/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
         </state>
       </provider>
     </entry>

@@ -1,6 +1,6 @@
 package gr.bus_positions.Interfaces;
-import gr.bus_positions.Classes.Topic;
-import gr.bus_positions.Classes.Value;
+import gr.bus_positions.Topic;
+import gr.bus_positions.Value;
 import java.net.InetAddress;
 public interface Publisher {
     /**

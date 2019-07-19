@@ -1,4 +1,4 @@
-package gr.bus_positions.Classes;
+package gr.bus_positions;
 import java.io.Serializable;
 /**
  * This class is used to store the bus, the latitude, the longitude

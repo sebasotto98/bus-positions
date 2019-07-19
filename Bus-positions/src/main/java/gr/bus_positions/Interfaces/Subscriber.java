@@ -1,5 +1,5 @@
 package gr.bus_positions.Interfaces;
-import gr.bus_positions.Classes.Topic;
+import gr.bus_positions.Topic;
 import java.net.InetAddress;
 public interface Subscriber {
     /**
